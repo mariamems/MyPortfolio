@@ -530,7 +530,7 @@ function Home({ onOpenProject }) {
 <h1 className="text-3xl md:text-6xl font-black tracking-tight text-slate-950"> Building Secure Ideas Into Real Products.
 </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            I’m Mariam, a cybersecurity student and working student who enjoys learning fast, building with purpose, and turning complex technical ideas into simple, useful systems. My work moves between secure mobile apps, IDS monitoring, data analytics, dashboards, customer-facing operations, and real-world teamwork.
+            Hey there! I’m Mariam, a cybersecurity working student who enjoys learning fast, building with purpose, and turning complex technical ideas into simple, useful systems. My work moves between secure mobile apps, IDS monitoring, data analytics, dashboards, customer-facing operations, and real-world teamwork.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
             In December 2025, I completed Securi-Cata, an in-house threat detection lab supervised by Mr. Ali AlAali. In May 2026, I completed Amaan, my senior-year secure travel insurance application supervised by Dr. Talha Khan. Both projects started from research and planning, went through technical build and testing, and ended as polished products I can confidently present.
