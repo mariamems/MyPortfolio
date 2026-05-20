@@ -99,7 +99,7 @@ const projectCards = [
     tagline: "An in-house IDS lab turning raw network traffic into visible security intelligence.",
     timeline: "September 2025 – December 2025",
     completed: "Completed December 2025",
-    supervisor: "Supervised By Ali Alkali",
+    supervisor: "Supervised By Mr. Ali AlAali",
     tags: ["In-House Project", "Suricata IDS", "Elastic", "Kibana", "Filebeat", "Python", "Kali Linux"],
     image: "/Logos/securicata/securi-cata-dashboard.png",
     summary: "Securi-Cata is a defensive monitoring project where I built a full detection pipeline using Suricata, Elastic, and Kibana to simulate attacks, capture alerts, visualize threats, and generate incident reports.",
@@ -325,7 +325,7 @@ alert tcp any any -> any any (msg:"CUSTOM: SSH BruteForce Attempt Detected"; fla
           <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-800">
             <Icon name="calendar" size={15} /> {project.completed}
           </p>
-          <h1 className="text-4xl font-black tracking-tight text-slate-950 md:text-6xl">{project.title}</h1>
+          <h1 className="text-4xl font-black tracking-tight text-[#001f54] md:text-6xl">{project.title}</h1>
           <p className="mt-4 text-xl font-semibold leading-8 text-slate-700">{project.tagline}</p>
           <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
             <span className="rounded-full border border-slate-200 bg-white px-4 py-2 font-semibold">{project.timeline}</span>
@@ -527,12 +527,12 @@ function Home({ onOpenProject }) {
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-800">
             <Icon name="shield" size={16} /> Cybersecurity Portfolio
           </p>
-          <h1 className="text-5xl font-black tracking-tight text-slate-950 md:text-7xl">Building Secure Ideas Into Real Products.</h1>
+          <h1 className="text-5xl font-black text-[#001f54] tracking-tight text-slate-950 md:text-7xl">Building Secure Ideas Into Real Products.</h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
             I’m Mariam, a cybersecurity student and working student who enjoys learning fast, building with purpose, and turning complex technical ideas into simple, useful systems. My work moves between secure mobile apps, IDS monitoring, data analytics, dashboards, customer-facing operations, and real-world teamwork.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-            In December 2025, I completed Securi-Cata, an in-house threat detection lab supervised by Ali Alkali. In May 2026, I completed Amaan, my senior-year secure travel insurance application supervised by Dr. Talha Khan. Both projects started from research and planning, went through technical build and testing, and ended as polished products I can confidently present.
+            In December 2025, I completed Securi-Cata, an in-house threat detection lab supervised by Mr. Ali AlAali. In May 2026, I completed Amaan, my senior-year secure travel insurance application supervised by Dr. Talha Khan. Both projects started from research and planning, went through technical build and testing, and ended as polished products I can confidently present.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#projects" className="rounded-2xl bg-slate-950 px-5 py-3 font-bold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-cyan-700">Explore Projects</a>
