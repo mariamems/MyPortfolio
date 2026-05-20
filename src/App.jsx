@@ -527,7 +527,8 @@ function Home({ onOpenProject }) {
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-800">
             <Icon name="shield" size={16} /> Cybersecurity Portfolio
           </p>
-          <h1 className="text-5xl font-black text-[#001f54] tracking-tight text-slate-950 md:text-7xl">Building Secure Ideas Into Real Products.</h1>
+<h1 className="text-3xl md:text-6xl font-black tracking-tight text-slate-950"> Building Secure Ideas Into Real Products.
+</h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
             I’m Mariam, a cybersecurity student and working student who enjoys learning fast, building with purpose, and turning complex technical ideas into simple, useful systems. My work moves between secure mobile apps, IDS monitoring, data analytics, dashboards, customer-facing operations, and real-world teamwork.
           </p>
@@ -720,7 +721,7 @@ export default function CybersecurityPortfolio() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
       <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.10),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.08),transparent_30%)]" />
-      <div className="mx-auto max-w-6xl px-5 py-8 md:py-12">
+      <div className="mx-auto max-w-6xl px-4 md:px-8">
         <nav className="mb-10 flex items-center justify-between rounded-3xl border border-slate-200 bg-white/90 px-5 py-4 shadow-lg shadow-slate-200/60 backdrop-blur">
           <button onClick={goHome} className="flex items-center gap-3 font-black text-slate-950">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white">
