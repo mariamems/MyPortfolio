@@ -9,7 +9,7 @@ const PROFILE = {
   phone: "+973 3990 3638",
   linkedin: "https://www.linkedin.com/in/mariamabdan",
   github: "https://github.com/your-github",
-  cvUrl: "/Logos/Mariam-Abdan-CV.pdf",
+  cvUrl: "public/Logos/Mariam-Abdan-CV.pdf",
 };
 
 const educationItems = [
@@ -537,7 +537,7 @@ function Home({ onOpenProject }) {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#projects" className="rounded-2xl bg-slate-950 px-5 py-3 font-bold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-cyan-700">Explore Projects</a>
-            <a href={PROFILE.cvUrl} download className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-cyan-200 hover:text-cyan-800"><Icon name="file" size={18} /> Download CV</a>
+            <a href={PROFILE.cvUrl} download className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-cyan-200 hover:text-cyan-800"><Icon name="/Logos/Mariam-Abdan-CV.pdf" size={18} /> Download CV</a>
           </div>
         </motion.div>
 
@@ -680,21 +680,21 @@ function Home({ onOpenProject }) {
               <p><strong className="text-slate-950">Location:</strong> {PROFILE.location}</p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={`mailto:${PROFILE.email}`} className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 font-bold text-white"><Icon name="mail" size={18} /> Email Me</a>
-              <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-800 hover:border-cyan-200"><Icon name="linkedin" size={18} /> LinkedIn</a>
-              <a href={PROFILE.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-800 hover:border-cyan-200"><Icon name="github" size={18} /> GitHub</a>
+              <a href={`mailto:${PROFILE.email}`} className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 font-bold text-white"><Icon name="mariamabdan13@gmail.com" size={18} /> Email Me</a>
+              <a href={PROFILE.linkedin} target="_blank" rel="linkedin.com/in/mariamabdan" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-800 hover:border-cyan-200"><Icon name="linkedin" size={18} /> LinkedIn</a>
+              <a href={PROFILE.github} target="_blank" rel="https://github.com/mariamems" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-800 hover:border-cyan-200"><Icon name="github" size={18} /> GitHub</a>
             </div>
           </Card>
           <div className="grid gap-6 sm:grid-cols-2">
             <Card className="text-center">
               <h3 className="mb-4 font-black text-slate-950">Contact QR</h3>
-              <img src={contactQR} alt="QR Code For Contact Info" className="mx-auto rounded-2xl bg-white p-3 shadow" />
+              <img src={"/Logos/eCardQR.png"} alt="QR Code For Contact Info" className="mx-auto rounded-2xl bg-white p-3 shadow" />
               <p className="mt-4 text-xs leading-5 text-slate-500">Scans as a vCard contact.</p>
             </Card>
             <Card className="text-center">
               <h3 className="mb-4 font-black text-slate-950">CV QR</h3>
-              <img src={cvQR} alt="QR Code For CV" className="mx-auto rounded-2xl bg-white p-3 shadow" />
-              <a href={PROFILE.cvUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center justify-center gap-2 text-sm font-bold text-cyan-800 hover:text-cyan-600">Open CV <Icon name="external" size={14} /></a>
+              <img src={"Logos/Mariam-CV-QR.png"} alt="QR Code For CV" className="mx-auto rounded-2xl bg-white p-3 shadow" />
+              <a href={"/Logos/Mariam-Abdan-CV.pdf"} target="_blank" rel="/Logos/Mariam-CV-QR.png" className="mt-4 inline-flex items-center justify-center gap-2 text-sm font-bold text-cyan-800 hover:text-cyan-600">Open CV <Icon name="public/Logos/Mariam-Abdan-CV.pdf" size={14} /></a>
             </Card>
           </div>
         </div>
