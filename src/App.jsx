@@ -11,18 +11,18 @@ const PROFILE = {
   cvUrl: "/Logos/Mariam-Abdan-CV.pdf",
 };
 
-const quickStats = [
-  { value: "2", label: "Major portfolio projects" },
-  { value: "2026", label: "Expected graduation" },
-  { value: "5+", label: "Workplace experiences" },
-  { value: "20+", label: "Core skills shown clearly" },
+const summaryPoints = [
+  "I design secure, readable, mobile-friendly products that feel clear at a glance.",
+  "My work combines cybersecurity, analytics, and real workplace experience.",
+  "I like projects that show the problem, the method, the tools, and the outcome.",
+  "I write and present work in a professional way so employers can understand it quickly.",
 ];
 
-const aboutPoints = [
-  "I build secure and usable products, not just technical demos.",
-  "My background combines cybersecurity, analytics, and real workplace experience.",
-  "I prefer clean layouts, strong contrast, and short sections that are easy to scan.",
-  "I like projects that show clear results, thoughtful process, and real-world problem solving.",
+const stats = [
+  { value: "2", label: "Featured projects" },
+  { value: "2026", label: "Expected graduation" },
+  { value: "5+", label: "Work experiences" },
+  { value: "20+", label: "Skills shown clearly" },
 ];
 
 const educationItems = [
@@ -137,59 +137,105 @@ const projects = [
   {
     id: "amaan",
     title: "Amaan Travel Insurance Application",
+    status: "Senior Year Project",
     timeline: "February 2026 - May 2026",
-    completion: "Completed in May 2026",
     supervisor: "Supervised by Dr. Talha Khan",
     image: "/Logos/amaan/amaan-hero.png",
+    objective:
+      "Build a secure, mobile-first travel insurance platform that makes it easier for users to discover, compare, and apply for policies while giving administrators a structured way to manage data and requests.",
     summary:
-      "A secure travel insurance app that makes policy discovery, comparison, application tracking, and admin management easier through a clean mobile experience and protected backend workflows.",
-    impact: [
-      "Built a mobile-first experience that is easy to read on phones.",
-      "Separated user and admin flows so the product stays simple.",
-      "Focused on secure login, access control, and validation.",
+      "Amaan is a polished Flutter application with secure backend workflows, designed to simplify a process that often feels scattered and overwhelming for users.",
+    tech: ["Flutter", "Dart", "Supabase", "Python", "AI integration", "Secure APIs"],
+    contributions: [
+      "Built the interface architecture around customer, admin, and support journeys.",
+      "Integrated authentication and protected workflows for sensitive actions.",
+      "Supported API and backend logic so the frontend stayed fast and simple.",
+      "Refined the presentation layer so the final product could be shown professionally to assessors and employers.",
     ],
-    stack: ["Flutter", "Dart", "Supabase", "Python", "AI Integration", "Secure APIs"],
-    role:
-      "I contributed to the frontend, backend support, API integration, secure authentication, role-based access, testing, documentation, and demo preparation.",
+    roadmap: [
+      {
+        phase: "01",
+        title: "Research and scope",
+        text: "Mapped the travel insurance journey, identified friction points, defined user roles, and documented which screens and data flows needed protection.",
+      },
+      {
+        phase: "02",
+        title: "Architecture and UX planning",
+        text: "Separated the product into clear modules for browsing, applications, admin management, and AI support so the app stayed easy to navigate on mobile.",
+      },
+      {
+        phase: "03",
+        title: "Build and integration",
+        text: "Created Flutter screens, connected services with Supabase, supported backend and data tasks with Python, and implemented secure access patterns.",
+      },
+      {
+        phase: "04",
+        title: "Testing and refinement",
+        text: "Checked edge cases, improved spacing and copy, validated forms, and prepared the final version as a demo-ready project with a clean handoff story.",
+      },
+    ],
+    outcomes: [
+      "Clear mobile experience that is easy to read and present.",
+      "Well-structured admin and user flows with security in mind.",
+      "A project that demonstrates product thinking, not just coding.",
+    ],
     screenshots: [
       { src: "/Logos/amaan/amaan-hero.png", label: "Amaan mobile interface" },
       { src: "/Logos/amaan/policy-browsing.png", label: "Policy browsing and comparison" },
       { src: "/Logos/amaan/admin-dashboard.png", label: "Admin dashboard and policy management" },
       { src: "/Logos/amaan/ai-assistant.png", label: "AI assistant experience" },
     ],
-    details: [
-      "Clear customer journey from browsing to application tracking.",
-      "Secure communication for sensitive user and policy data.",
-      "Designed to be easy to demo and easy for employers to understand quickly.",
-    ],
   },
   {
     id: "securicata",
     title: "Securi-Cata Real-Time Threat Detection Lab",
+    status: "In-house Security Project",
     timeline: "September 2025 - December 2025",
-    completion: "Completed in December 2025",
     supervisor: "Supervised by Mr. Ali AlAali",
     image: "/Logos/securicata/securi-cata-dashboard.png",
+    objective:
+      "Design a small SOC-style lab that converts raw network traffic into readable detection output, visual dashboards, and report-ready evidence.",
     summary:
-      "A defensive monitoring lab that turns raw network traffic into readable security intelligence using Suricata, Elastic, Kibana, and automated reporting.",
-    impact: [
-      "Converted noisy logs into readable security alerts and visuals.",
-      "Built dashboards that show attack patterns, source IPs, and ports.",
-      "Automated report generation to support incident review.",
+      "Securi-Cata is a practical IDS and analytics pipeline that turns noisy activity into structured security insight using Suricata, Elastic, Kibana, and Python reporting.",
+    tech: ["Suricata IDS", "Elastic", "Kibana", "Filebeat", "Python", "Kali Linux"],
+    contributions: [
+      "Configured the lab environment and connected the monitoring pipeline end to end.",
+      "Wrote and tuned detection logic to reduce noise and surface useful alerts.",
+      "Built dashboards for alert patterns, source IPs, destination ports, and attack distribution.",
+      "Automated report generation so findings could be explained clearly in a professional format.",
     ],
-    stack: ["Suricata IDS", "Elastic", "Kibana", "Filebeat", "Python", "Kali Linux"],
-    role:
-      "I configured the lab, simulated attacks, wrote detection rules, tuned alerts, built dashboards, and generated readable incident reports.",
+    roadmap: [
+      {
+        phase: "01",
+        title: "Lab planning",
+        text: "Studied IDS workflows, selected the monitoring tools, and designed a simple architecture that could support controlled testing and visible results.",
+      },
+      {
+        phase: "02",
+        title: "Environment setup",
+        text: "Prepared Linux systems, configured network interfaces, installed Suricata and Elastic components, and verified that logs could move from capture to visualization.",
+      },
+      {
+        phase: "03",
+        title: "Attack simulation and tuning",
+        text: "Used Kali Linux to generate controlled traffic such as scans and suspicious activity, then tuned thresholds and rules to keep alerts meaningful.",
+      },
+      {
+        phase: "04",
+        title: "Analysis and reporting",
+        text: "Created Kibana views for investigation and produced Python-generated PDF reports that summarized the alert story in a clear format.",
+      },
+    ],
+    outcomes: [
+      "A visible detection pipeline that is easier to interpret than raw logs.",
+      "Dashboards and reports that support analyst-style thinking.",
+      "A strong example of security operations, monitoring, and documentation.",
+    ],
     screenshots: [
       { src: "/Logos/securicata/elastic-alert-details.png", label: "Elastic alert details" },
       { src: "/Logos/securicata/securi-cata-dashboard.png", label: "Securi-Cata dashboard" },
       { src: "/Logos/securicata/attack-distribution.png", label: "Attack distribution and map view" },
       { src: "/Logos/securicata/report-generation.png", label: "Automated PDF report generation" },
-    ],
-    details: [
-      "Shows practical IDS work, not just theory.",
-      "Demonstrates monitoring, analysis, and reporting skills.",
-      "Useful for SOC, security analyst, and threat detection roles.",
     ],
   },
 ];
@@ -198,7 +244,7 @@ const featuredHighlights = [
   "Bachelor of ICT in Cybersecurity at Bahrain Polytechnic, expected June 2026",
   "Secure mobile app development and backend integration at Raincode",
   "Data analytics training with Python, SQL, and Power BI",
-  "Professional growth through PwC Middle East and real workplace experience",
+  "Professional growth through PwC Middle East and workplace experience",
 ];
 
 function Icon({ name, size = 20, className = "" }) {
@@ -316,7 +362,9 @@ function SectionHeading({ icon, eyebrow, title, subtitle }) {
 
 function Card({ children, className = "" }) {
   return (
-    <div className={`rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] md:p-6 ${className}`}>
+    <div
+      className={`rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] md:p-6 ${className}`}
+    >
       {children}
     </div>
   );
@@ -335,7 +383,11 @@ function TimelineItem({ item }) {
   return (
     <Card className="flex items-start gap-4">
       <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-        <img src={item.logo} alt={`${item.name} logo`} className="h-full w-full object-contain p-2" />
+        <img
+          src={item.logo}
+          alt={`${item.name} logo`}
+          className="h-full w-full object-contain p-2"
+        />
       </div>
       <div className="min-w-0">
         <h3 className="font-black text-slate-950">{item.name}</h3>
@@ -361,15 +413,29 @@ function TagList({ items }) {
   );
 }
 
+function RoadmapStep({ step }) {
+  return (
+    <div className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-sm font-black text-white">
+        {step.phase}
+      </div>
+      <div>
+        <h4 className="font-black text-slate-950">{step.title}</h4>
+        <p className="mt-1 text-sm leading-7 text-slate-600">{step.text}</p>
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({ project, onImageClick }) {
   return (
     <Card className="overflow-hidden p-0">
       <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="border-b border-slate-200 bg-slate-50 lg:border-b-0 lg:border-r">
-          <div className="p-5">
+          <div className="p-5 md:p-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white">
-                {project.completion}
+                {project.status}
               </span>
               <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
                 {project.timeline}
@@ -385,7 +451,7 @@ function ProjectCard({ project, onImageClick }) {
               {project.summary}
             </p>
             <div className="mt-5">
-              <TagList items={project.stack} />
+              <TagList items={project.tech} />
             </div>
           </div>
 
@@ -404,9 +470,14 @@ function ProjectCard({ project, onImageClick }) {
 
         <div className="p-5 md:p-6">
           <div>
-            <h4 className="text-lg font-black text-slate-950">What employers should notice</h4>
+            <h4 className="text-lg font-black text-slate-950">Objective</h4>
+            <p className="mt-3 text-sm leading-7 text-slate-700">{project.objective}</p>
+          </div>
+
+          <div className="mt-6">
+            <h4 className="text-lg font-black text-slate-950">My contribution</h4>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-              {project.impact.map((item) => (
+              {project.contributions.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span className="mt-1 text-sky-700">
                     <Icon name="check" size={16} />
@@ -418,15 +489,22 @@ function ProjectCard({ project, onImageClick }) {
           </div>
 
           <div className="mt-6">
-            <h4 className="text-lg font-black text-slate-950">My role</h4>
-            <p className="mt-3 text-sm leading-7 text-slate-700">{project.role}</p>
+            <h4 className="text-lg font-black text-slate-950">Roadmap</h4>
+            <div className="mt-4 space-y-3">
+              {project.roadmap.map((step) => (
+                <RoadmapStep key={step.phase} step={step} />
+              ))}
+            </div>
           </div>
 
           <div className="mt-6">
-            <h4 className="text-lg font-black text-slate-950">Clear takeaway</h4>
+            <h4 className="text-lg font-black text-slate-950">Outcome</h4>
             <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
-              {project.details.map((item) => (
-                <li key={item} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              {project.outcomes.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"
+                >
                   {item}
                 </li>
               ))}
@@ -470,7 +548,11 @@ function CertificationsSection() {
         {certifications.map((cert) => (
           <Card key={cert.title} className="flex h-full flex-col text-center">
             <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-50">
-              <img src={cert.logo} alt={`${cert.issuer} logo`} className="h-full w-full object-contain p-3" />
+              <img
+                src={cert.logo}
+                alt={`${cert.issuer} logo`}
+                className="h-full w-full object-contain p-3"
+              />
             </div>
             <h3 className="mt-5 text-lg font-black text-slate-950">{cert.title}</h3>
             <p className="mt-2 text-sm font-semibold text-sky-700">{cert.issuer}</p>
@@ -525,19 +607,19 @@ function Home({ onImageClick }) {
             <Icon name="shield" size={16} /> Cybersecurity Portfolio
           </p>
           <h1 className="max-w-3xl text-4xl font-black tracking-tight text-slate-950 md:text-6xl">
-            Easy to scan, easy to trust, and built for employers.
+            Built to read professionally on laptop and mobile.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            I am Mariam, a cybersecurity graduate and working student who likes to turn complex ideas into clear, useful systems. This portfolio is designed to be readable on mobile, simple to scroll, and focused on the work that matters most.
+            I am Mariam, a cybersecurity graduate and working student who likes to turn complex ideas into clear, useful systems. This portfolio is written and structured to feel professional, easy to scan, and focused on the work that matters most to employers.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-            The CV linked here is the updated version you shared. I also removed the old e-card QR section so the portfolio now points directly to the information employers need.
+            The updated CV is linked directly, the old e-card scan was removed, and the project section now explains the objective, roadmap, technologies, and outcome in a more complete way.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 font-bold text-white shadow-lg shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-sky-700"
+              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-sky-700 to-cyan-600 px-5 py-3 font-bold text-white shadow-lg shadow-sky-200 transition hover:-translate-y-0.5 hover:from-sky-800 hover:to-cyan-700"
             >
               See Projects <Icon name="arrow" size={18} />
             </a>
@@ -583,15 +665,21 @@ function Home({ onImageClick }) {
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl bg-slate-950 p-4 text-center text-white">
                   <p className="text-2xl font-black">2026</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/70">Graduate year</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/70">
+                    Graduate year
+                  </p>
                 </div>
                 <div className="rounded-2xl bg-sky-100 p-4 text-center text-slate-900">
                   <p className="text-2xl font-black">2</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-600">Featured projects</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-600">
+                    Featured projects
+                  </p>
                 </div>
                 <div className="rounded-2xl bg-slate-100 p-4 text-center text-slate-900">
                   <p className="text-2xl font-black">5+</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-600">Experiences</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-600">
+                    Experiences
+                  </p>
                 </div>
               </div>
             </div>
@@ -604,7 +692,7 @@ function Home({ onImageClick }) {
           icon="briefcase"
           eyebrow="Quick overview"
           title="A little about me"
-          subtitle="Short, clear context for employers who want to understand the person behind the projects."
+          subtitle="A concise professional summary for employers who want the essentials first."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -618,13 +706,16 @@ function Home({ onImageClick }) {
                 Alongside study, I have worked in development, retail operations, administration, client support, IT exposure, and event leadership. That mix helps me communicate well and stay organized in fast-moving environments.
               </p>
               <p>
-                My goal with this portfolio is simple: make the important information easy to find, easy to read, and easy to remember.
+                I prefer writing portfolios that sound professional, stay easy to scan, and show the thinking behind the work instead of only the final screen.
               </p>
             </div>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {aboutPoints.map((item) => (
-                <div key={item} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              {summaryPoints.map((item) => (
+                <div
+                  key={item}
+                  className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
+                >
                   <Icon name="check" size={18} className="mt-1 shrink-0 text-sky-700" />
                   <p className="text-sm leading-6 text-slate-700">{item}</p>
                 </div>
@@ -635,7 +726,7 @@ function Home({ onImageClick }) {
           <Card className="bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_100%)]">
             <h3 className="text-2xl font-black text-slate-950">At a glance</h3>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {quickStats.map((stat) => (
+              {stats.map((stat) => (
                 <StatCard key={stat.label} value={stat.value} label={stat.label} />
               ))}
             </div>
@@ -646,7 +737,10 @@ function Home({ onImageClick }) {
                 "Focus on secure and usable systems",
                 "Comfortable working across technical and non-technical tasks",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4"
+                >
                   <span className="rounded-full bg-sky-100 p-2 text-sky-800">
                     <Icon name="check" size={16} />
                   </span>
@@ -663,7 +757,7 @@ function Home({ onImageClick }) {
           icon="briefcase"
           eyebrow="Experience"
           title="Education and work experience"
-          subtitle="A compact history that gives employers context without making them dig."
+          subtitle="A compact timeline that gives employers context without making them dig."
         />
 
         <div className="space-y-10">
@@ -692,7 +786,7 @@ function Home({ onImageClick }) {
           icon="code"
           eyebrow="Capabilities"
           title="Skills"
-          subtitle="A practical mix of cybersecurity, secure development, analytics, and visual tooling."
+          subtitle="A practical mix of cybersecurity, secure development, analytics, and design tools."
         />
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {skills.map((skill) => (
@@ -711,7 +805,7 @@ function Home({ onImageClick }) {
           icon="database"
           eyebrow="Portfolio focus"
           title="Featured projects"
-          subtitle="Each project is presented in a single readable block so employers can understand the problem, the role, the stack, and the outcome quickly."
+          subtitle="Each project is written to explain the objective, roadmap, technologies, and outcome in a way employers can follow quickly."
         />
         <div className="space-y-8">
           {projects.map((project) => (
@@ -727,7 +821,7 @@ function Home({ onImageClick }) {
           icon="mail"
           eyebrow="Contact"
           title="Let’s connect"
-          subtitle="Direct links only, no QR scan needed."
+          subtitle="Direct links only, with no extra clutter."
         />
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <Card>
@@ -741,7 +835,10 @@ function Home({ onImageClick }) {
                 <span className="rounded-full bg-sky-100 p-2 text-sky-800">
                   <Icon name="mail" size={16} />
                 </span>
-                <a className="font-semibold text-slate-800 hover:text-sky-800" href={`mailto:${PROFILE.email}`}>
+                <a
+                  className="font-semibold text-slate-800 hover:text-sky-800"
+                  href={`mailto:${PROFILE.email}`}
+                >
                   {PROFILE.email}
                 </a>
               </p>
@@ -755,7 +852,7 @@ function Home({ onImageClick }) {
                 <span className="rounded-full bg-sky-100 p-2 text-sky-800">
                   <Icon name="calendar" size={16} />
                 </span>
-                <span className="font-semibold text-slate-800">CV updated from your uploaded PDF</span>
+                <span className="font-semibold text-slate-800">{PROFILE.phone}</span>
               </p>
             </div>
 
@@ -777,19 +874,18 @@ function Home({ onImageClick }) {
           </Card>
 
           <Card className="bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_100%)]">
-            <h3 className="text-2xl font-black text-slate-950">Want to add video later?</h3>
-            <ol className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-              <li>1. Put the video file in `public/videos/` so Vite can serve it directly.</li>
-              <li>2. Use a video element with controls, a poster image, and a clear title inside the project section.</li>
-              <li>3. Add `poster` for a strong thumbnail, and keep the file compressed for mobile.</li>
-              <li>4. If the video is large, link to YouTube or Vimeo instead of autoplaying it.</li>
-            </ol>
-
+            <h3 className="text-2xl font-black text-slate-950">Ready for deployment</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">
+              This portfolio is set up for free hosting on Netlify with `npm run build` and the `dist` publish folder.
+            </p>
             <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-700">
-              <p className="font-black text-slate-950">Free deployment</p>
-              <p className="mt-2">
-                The easiest free option is Netlify. Build the site with <code>npm run build</code>, then deploy the `dist` folder or connect the repo directly.
-              </p>
+              <p className="font-black text-slate-950">What changed</p>
+              <ul className="mt-2 space-y-2">
+                <li>Professional, mobile-friendly layout</li>
+                <li>Clearer project detail and roadmap sections</li>
+                <li>Direct CV link instead of QR scanning</li>
+                <li>Soft button styling and cleaner typography</li>
+              </ul>
             </div>
           </Card>
         </div>
@@ -836,10 +932,7 @@ export default function CybersecurityPortfolio() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <div
-              className="w-full max-w-5xl"
-              onClick={(event) => event.stopPropagation()}
-            >
+            <div className="w-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
               <button
                 type="button"
                 onClick={() => setSelectedImage(null)}

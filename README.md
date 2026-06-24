@@ -33,21 +33,6 @@ The production output is generated in `dist/`.
 2. Add a GitHub Pages deployment workflow or use a Pages hosting setup for Vite.
 3. Build the app and publish the `dist/` folder.
 
-## How to add video later
-
-1. Put your video file in `public/videos/`.
-2. Add a block like this inside a project section:
-
-```jsx
-<video controls playsInline preload="metadata" poster="/videos/video-poster.jpg" className="w-full rounded-3xl">
-  <source src="/videos/demo.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-```
-
-3. Keep the file compressed so it loads well on phones.
-4. If the video is large, host it on YouTube or Vimeo and embed the link instead.
-
 ## Notes
 
 - The updated CV is stored at `public/Logos/Mariam-Abdan-CV.pdf`.
