@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const PROFILE = {
@@ -8,22 +8,75 @@ const PROFILE = {
   email: "mariamabdan13@gmail.com",
   phone: "+973 3990 3638",
   linkedin: "https://www.linkedin.com/in/mariamabdan",
-  github: "https://github.com/your-github",
-  cvUrl: "public/Logos/Mariam-Abdan-CV.pdf",
+  cvUrl: "/Logos/Mariam-Abdan-CV.pdf",
 };
 
+const quickStats = [
+  { value: "2", label: "Major portfolio projects" },
+  { value: "2026", label: "Expected graduation" },
+  { value: "5+", label: "Workplace experiences" },
+  { value: "20+", label: "Core skills shown clearly" },
+];
+
+const aboutPoints = [
+  "I build secure and usable products, not just technical demos.",
+  "My background combines cybersecurity, analytics, and real workplace experience.",
+  "I prefer clean layouts, strong contrast, and short sections that are easy to scan.",
+  "I like projects that show clear results, thoughtful process, and real-world problem solving.",
+];
+
 const educationItems = [
-  { name: "Bahrain Polytechnic", role: "Bachelor Of ICT In Cybersecurity", dates: "2022 – 2026", logo: "/Logos/bahrainpolytechniclogo.png" },
-  { name: "General Assembly", role: "Data Analytics Bootcamp", dates: "July 2025 – October 2025", logo: "/Logos/generalassemblylogo.svg" },
-  { name: "PwC Middle East", role: "PwC Elevate Program", dates: "December 2024 – March 2025", logo: "/Logos/pwclogo.png" },
+  {
+    name: "Bahrain Polytechnic",
+    role: "Bachelor of ICT in Cybersecurity",
+    dates: "2022 - 2026",
+    logo: "/Logos/bahrainpolytechniclogo.png",
+  },
+  {
+    name: "General Assembly",
+    role: "Data Analytics Bootcamp",
+    dates: "July 2025 - October 2025",
+    logo: "/Logos/generalassemblylogo.svg",
+  },
+  {
+    name: "PwC Middle East",
+    role: "PwC Elevate Program",
+    dates: "December 2024 - March 2025",
+    logo: "/Logos/pwclogo.png",
+  },
 ];
 
 const workExperienceItems = [
-  { name: "Raincode", role: "Developer Intern", dates: "February 2026 – June 2026", logo: "/Logos/raincodelogo.png" },
-  { name: "Lush Cosmetics", role: "Sales Associate", dates: "February 2024 – June 2026", logo: "/Logos/lushlogo.png" },
-  { name: "The Collective Hub", role: "IT & Sales Trainee", dates: "September 2024 – November 2024", logo: "/Logos/thecollectivehublogo.png" },
-  { name: "MENA Angel Investors Summit", role: "Team Leader – Volunteer Operations", dates: "November 2025 & November 2024", logo: "/Logos/MENAtenmoulogo.png" },
-  { name: "Xerox", role: "Sales & Admin Coordinator", dates: "May 2022 – January 2024", logo: "/Logos/xeroxlogo.png" },
+  {
+    name: "Raincode",
+    role: "Developer Intern",
+    dates: "February 2026 - June 2026",
+    logo: "/Logos/raincodelogo.png",
+  },
+  {
+    name: "Lush Cosmetics",
+    role: "Sales Associate",
+    dates: "February 2024 - June 2026",
+    logo: "/Logos/lushlogo.png",
+  },
+  {
+    name: "The Collective Hub",
+    role: "IT & Sales Trainee",
+    dates: "September 2024 - November 2024",
+    logo: "/Logos/thecollectivehublogo.png",
+  },
+  {
+    name: "MENA Angel Investors Summit",
+    role: "Team Leader - Volunteer Operations",
+    dates: "November 2024 and November 2025",
+    logo: "/Logos/MENAtenmoulogo.png",
+  },
+  {
+    name: "Xerox",
+    role: "Sales & Admin Coordinator",
+    dates: "May 2022 - January 2024",
+    logo: "/Logos/xeroxlogo.png",
+  },
 ];
 
 const certifications = [
@@ -34,22 +87,21 @@ const certifications = [
     logo: "/Logos/MENAtenmoulogo.png",
     file: "/Logos/tenmou-cert.jpg",
   },
-
   {
     title: "PwC Elevate Program",
     issuer: "PwC Middle East",
-    date: "December 2024 – March 2025",
+    date: "December 2024 - March 2025",
     logo: "/Logos/pwclogo.png",
     file: "/Logos/pwc-cert.png",
   },
   {
     title: "Data Analytics Bootcamp",
     issuer: "General Assembly",
-    date: "July 2025 – October 2025",
+    date: "July 2025 - October 2025",
     logo: "/Logos/generalassemblylogo.svg",
     file: "/Logos/genasbm-cert.png",
   },
-    {
+  {
     title: "Microsoft Power Platform Developer Associate",
     issuer: "Microsoft",
     date: "May 2024",
@@ -62,7 +114,7 @@ const skills = [
   "OWASP Top 10",
   "NIST Cybersecurity Framework",
   "ISO 27001 Concepts",
-  "Authentication & Authorization",
+  "Authentication and Authorization",
   "JWT Security",
   "Role-Based Access Control",
   "Input Validation",
@@ -81,118 +133,75 @@ const skills = [
   "Figma",
 ];
 
-const projectCards = [
+const projects = [
   {
     id: "amaan",
     title: "Amaan Travel Insurance Application",
-    tagline: "Secure AI-powered travel insurance, built from idea to working product.",
-    timeline: "February 2026 – May 2026",
-    completed: "Completed May 2026",
-    supervisor: "Supervised By Dr. Talha Khan",
-    tags: ["Senior Year Project", "Flutter", "Dart", "Supabase", "Python", "AI Integration", "Secure APIs"],
+    timeline: "February 2026 - May 2026",
+    completion: "Completed in May 2026",
+    supervisor: "Supervised by Dr. Talha Khan",
     image: "/Logos/amaan/amaan-hero.png",
-    summary: "Amaan is a secure travel insurance platform designed to make policy discovery, comparison, application tracking, and admin management easier through a clean mobile experience and protected backend workflows.",
+    summary:
+      "A secure travel insurance app that makes policy discovery, comparison, application tracking, and admin management easier through a clean mobile experience and protected backend workflows.",
+    impact: [
+      "Built a mobile-first experience that is easy to read on phones.",
+      "Separated user and admin flows so the product stays simple.",
+      "Focused on secure login, access control, and validation.",
+    ],
+    stack: ["Flutter", "Dart", "Supabase", "Python", "AI Integration", "Secure APIs"],
+    role:
+      "I contributed to the frontend, backend support, API integration, secure authentication, role-based access, testing, documentation, and demo preparation.",
+    screenshots: [
+      { src: "/Logos/amaan/amaan-hero.png", label: "Amaan mobile interface" },
+      { src: "/Logos/amaan/policy-browsing.png", label: "Policy browsing and comparison" },
+      { src: "/Logos/amaan/admin-dashboard.png", label: "Admin dashboard and policy management" },
+      { src: "/Logos/amaan/ai-assistant.png", label: "AI assistant experience" },
+    ],
+    details: [
+      "Clear customer journey from browsing to application tracking.",
+      "Secure communication for sensitive user and policy data.",
+      "Designed to be easy to demo and easy for employers to understand quickly.",
+    ],
   },
   {
-    id: "securi-cata",
-    title: "Securi-Cata: Real-Time Network Threat Detection & Analytics",
-    tagline: "An in-house IDS lab turning raw network traffic into visible security intelligence.",
-    timeline: "September 2025 – December 2025",
-    completed: "Completed December 2025",
-    supervisor: "Supervised By Mr. Ali AlAali",
-    tags: ["In-House Project", "Suricata IDS", "Elastic", "Kibana", "Filebeat", "Python", "Kali Linux"],
+    id: "securicata",
+    title: "Securi-Cata Real-Time Threat Detection Lab",
+    timeline: "September 2025 - December 2025",
+    completion: "Completed in December 2025",
+    supervisor: "Supervised by Mr. Ali AlAali",
     image: "/Logos/securicata/securi-cata-dashboard.png",
-    summary: "Securi-Cata is a defensive monitoring project where I built a full detection pipeline using Suricata, Elastic, and Kibana to simulate attacks, capture alerts, visualize threats, and generate incident reports.",
+    summary:
+      "A defensive monitoring lab that turns raw network traffic into readable security intelligence using Suricata, Elastic, Kibana, and automated reporting.",
+    impact: [
+      "Converted noisy logs into readable security alerts and visuals.",
+      "Built dashboards that show attack patterns, source IPs, and ports.",
+      "Automated report generation to support incident review.",
+    ],
+    stack: ["Suricata IDS", "Elastic", "Kibana", "Filebeat", "Python", "Kali Linux"],
+    role:
+      "I configured the lab, simulated attacks, wrote detection rules, tuned alerts, built dashboards, and generated readable incident reports.",
+    screenshots: [
+      { src: "/Logos/securicata/elastic-alert-details.png", label: "Elastic alert details" },
+      { src: "/Logos/securicata/securi-cata-dashboard.png", label: "Securi-Cata dashboard" },
+      { src: "/Logos/securicata/attack-distribution.png", label: "Attack distribution and map view" },
+      { src: "/Logos/securicata/report-generation.png", label: "Automated PDF report generation" },
+    ],
+    details: [
+      "Shows practical IDS work, not just theory.",
+      "Demonstrates monitoring, analysis, and reporting skills.",
+      "Useful for SOC, security analyst, and threat detection roles.",
+    ],
   },
 ];
 
-const amaanScreenshots = [
-  { src: "/Logos/amaan/amaan-hero.png", label: "Amaan Final Mobile Interface" },
-  { src: "/Logos/amaan/policy-browsing.png", label: "Policy Browsing And Comparison" },
-  { src: "/Logos/amaan/admin-dashboard.png", label: "Admin Dashboard And Policy Management" },
-  { src: "/Logos/amaan/ai-assistant.png", label: "AI Travel Assistant Experience" },
+const featuredHighlights = [
+  "Bachelor of ICT in Cybersecurity at Bahrain Polytechnic, expected June 2026",
+  "Secure mobile app development and backend integration at Raincode",
+  "Data analytics training with Python, SQL, and Power BI",
+  "Professional growth through PwC Middle East and real workplace experience",
 ];
 
-const securiCataScreenshots = [
-  { src: "/Logos/securicata/elastic-alert-details.png", label: "Suricata Alert Details In Elastic" },
-  { src: "/Logos/securicata/securi-cata-dashboard.png", label: "Elastic Securi-Cata Dashboard" },
-  { src: "/Logos/securicata/attack-distribution.png", label: "Attack Distribution And Map View" },
-  { src: "/Logos/securicata/report-generation.png", label: "Automated PDF Report Generation" },
-];
-
-const amaanProcess = [
-  {
-    step: "01",
-    title: "Research & Planning",
-    text: "I began by understanding the problem space: travel insurance can feel confusing, slow, and scattered. I mapped the main users, planned the customer and admin journeys, and identified where security mattered most: login, user data, policy records, admin access, and API communication.",
-  },
-  {
-    step: "02",
-    title: "System Design",
-    text: "I shaped the app into clear modules: authentication, policy browsing, application handling, admin dashboard, data services, and AI support. The architecture focused on keeping the mobile frontend simple while protecting backend access and sensitive actions.",
-  },
-  {
-    step: "03",
-    title: "Build & Integration",
-    text: "I developed Flutter interfaces, connected services through APIs, supported backend and data processing tasks using Python, and integrated secure workflows around authentication, role-based access, and protected communication.",
-  },
-  {
-    step: "04",
-    title: "Testing & Refinement",
-    text: "The final phase focused on debugging, improving UI and UX, testing flows, tightening validation, and preparing the application as a presentable senior-year product with clear documentation and a polished demo experience.",
-  },
-];
-
-const securiCataProcess = [
-  {
-    step: "01",
-    title: "Research & Planning",
-    text: "I studied IDS workflows, network monitoring basics, Suricata rule logic, Elastic dashboards, and common attack patterns. The goal was to create a lab that behaved like a small SOC monitoring pipeline.",
-  },
-  {
-    step: "02",
-    title: "Environment Setup",
-    text: "I configured Linux virtual machines, network interfaces, Suricata IDS, Filebeat, Elastic, and Kibana so traffic could be captured, parsed, shipped, indexed, and visualized.",
-  },
-  {
-    step: "03",
-    title: "Attack Simulation & Detection",
-    text: "Using Kali Linux, I simulated activity such as port scanning, brute-force attempts, and suspicious web traffic. I wrote custom Suricata rules to detect patterns and tuned them using threshold-based alerting.",
-  },
-  {
-    step: "04",
-    title: "Analytics & Reporting",
-    text: "I created Kibana dashboards for alert signatures, source IPs, destination ports, attack trends, and map views. Then I automated PDF report generation using Python to turn alert data into readable incident summaries.",
-  },
-];
-
-const aboutHighlights = [
-  "Bachelor Of ICT In Cybersecurity At Bahrain Polytechnic, Expected Graduation June 2026",
-  "Hands-On Secure App Development Through Raincode And The Amaan Senior Year Project",
-  "Data Analytics Training With General Assembly Using Python, SQL, Power BI, And Reporting",
-  "Professional Growth Through PwC Middle East Elevate Program",
-  "Working Student Experience Across Technology, Retail Operations, Administration, Client Support, IT Exposure, And Event Leadership",
-];
-
-const contactVCard = `BEGIN:VCARD\nVERSION:3.0\nFN:${PROFILE.name}\nTITLE:${PROFILE.title}\nEMAIL:${PROFILE.email}\nTEL:${PROFILE.phone}\nADR:;;${PROFILE.location};;;;\nURL:${PROFILE.linkedin}\nEND:VCARD`;
-
-function qrUrl(data) {
-  return `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(data)}`;
-}
-
-function runPortfolioTests() {
-  console.assert(Boolean(PROFILE.name), "Profile name is required");
-  console.assert(projectCards.length === 2, "Portfolio should include two featured projects");
-  console.assert(projectCards.some((project) => project.id === "amaan"), "Amaan project should exist");
-  console.assert(projectCards.some((project) => project.id === "securi-cata"), "Securi-Cata project should exist");
-  console.assert(educationItems.length >= 1, "Education section should include at least one item");
-  console.assert(workExperienceItems.length >= 1, "Work experience section should include at least one item");
-  console.assert(qrUrl(PROFILE.email).includes(encodeURIComponent(PROFILE.email)), "QR function should encode input data");
-}
-
-runPortfolioTests();
-
-function Icon({ name, size = 22, className = "" }) {
+function Icon({ name, size = 20, className = "" }) {
   const props = {
     width: size,
     height: size,
@@ -206,49 +215,134 @@ function Icon({ name, size = 22, className = "" }) {
     "aria-hidden": "true",
   };
 
-  const paths = {
+  const icons = {
     shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />,
-    lock: <><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>,
-    mail: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>,
-    github: <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />,
-    linkedin: <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></>,
-    file: <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /></>,
-    external: <><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><path d="M15 3h6v6" /><path d="M10 14 21 3" /></>,
-    qr: <><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><path d="M14 14h2v2h-2z" /><path d="M18 14h3v3" /><path d="M14 18h2v3" /><path d="M18 21h3" /></>,
-    code: <><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></>,
-    database: <><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" /><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" /></>,
-    check: <><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="m9 11 3 3L22 4" /></>,
-    arrow: <><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></>,
-    briefcase: <><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /></>,
-    calendar: <><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4" /><path d="M8 2v4" /><path d="M3 10h18" /></>,
-    palette: <><circle cx="13.5" cy="6.5" r=".5" /><circle cx="17.5" cy="10.5" r=".5" /><circle cx="8.5" cy="7.5" r=".5" /><circle cx="6.5" cy="12.5" r=".5" /><path d="M12 2C6.5 2 2 6 2 11c0 5.5 4.5 10 10 10h1.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h1.5A8.5 8.5 0 0 0 22 3.5C19.5 2.5 16 2 12 2z" /></>,
+    mail: (
+      <>
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </>
+    ),
+    linkedin: (
+      <>
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </>
+    ),
+    download: (
+      <>
+        <path d="M12 3v12" />
+        <path d="m7 10 5 5 5-5" />
+        <path d="M5 21h14" />
+      </>
+    ),
+    briefcase: (
+      <>
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+      </>
+    ),
+    calendar: (
+      <>
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path d="M16 2v4" />
+        <path d="M8 2v4" />
+        <path d="M3 10h18" />
+      </>
+    ),
+    code: (
+      <>
+        <path d="m16 18 6-6-6-6" />
+        <path d="m8 6-6 6 6 6" />
+      </>
+    ),
+    check: <path d="m20 6-11 11-5-5" />,
+    external: (
+      <>
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        <path d="M15 3h6v6" />
+        <path d="M10 14 21 3" />
+      </>
+    ),
+    palette: (
+      <>
+        <circle cx="13.5" cy="6.5" r=".5" />
+        <circle cx="17.5" cy="10.5" r=".5" />
+        <circle cx="8.5" cy="7.5" r=".5" />
+        <circle cx="6.5" cy="12.5" r=".5" />
+        <path d="M12 2C6.5 2 2 6 2 11c0 5.5 4.5 10 10 10h1.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h1.5A8.5 8.5 0 0 0 22 3.5C19.5 2.5 16 2 12 2z" />
+      </>
+    ),
+    location: (
+      <>
+        <path d="M12 21s6-5.1 6-11a6 6 0 0 0-12 0c0 5.9 6 11 6 11z" />
+        <circle cx="12" cy="10" r="2" />
+      </>
+    ),
+    arrow: (
+      <>
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </>
+    ),
   };
 
-  return <svg {...props}>{paths[name] || paths.shield}</svg>;
+  return <svg {...props}>{icons[name] || icons.shield}</svg>;
 }
 
-function Card({ children, className = "" }) {
-  return <div className={`rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70 ${className}`}>{children}</div>;
-}
-
-function SectionTitle({ icon, title, subtitle }) {
+function SectionHeading({ icon, eyebrow, title, subtitle }) {
   return (
-    <div className="mb-8 text-center">
-      <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100">
-        <Icon name={icon} size={24} />
+    <div className="mx-auto mb-8 max-w-3xl text-center">
+      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-sky-800 ring-1 ring-sky-200">
+        <Icon name={icon} size={22} />
       </div>
-      <h2 className="text-3xl font-black tracking-tight text-slate-950 md:text-4xl">{title}</h2>
-      {subtitle ? <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-slate-600 md:text-base">{subtitle}</p> : null}
+      {eyebrow ? (
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-sky-700">
+          {eyebrow}
+        </p>
+      ) : null}
+      <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 md:text-4xl">
+        {title}
+      </h2>
+      {subtitle ? (
+        <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+          {subtitle}
+        </p>
+      ) : null}
     </div>
   );
 }
 
-function HeroImage({ src, alt }) {
+function Card({ children, className = "" }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-inner">
-      <img src={src} alt={alt} className="h-72 w-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
+    <div className={`rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] md:p-6 ${className}`}>
+      {children}
     </div>
+  );
+}
+
+function StatCard({ value, label }) {
+  return (
+    <Card className="text-center">
+      <p className="text-3xl font-black tracking-tight text-slate-950">{value}</p>
+      <p className="mt-2 text-sm leading-6 text-slate-600">{label}</p>
+    </Card>
+  );
+}
+
+function TimelineItem({ item }) {
+  return (
+    <Card className="flex items-start gap-4">
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+        <img src={item.logo} alt={`${item.name} logo`} className="h-full w-full object-contain p-2" />
+      </div>
+      <div className="min-w-0">
+        <h3 className="font-black text-slate-950">{item.name}</h3>
+        <p className="mt-1 text-sm font-semibold text-slate-700">{item.role}</p>
+        <p className="mt-1 text-xs text-slate-500">{item.dates}</p>
+      </div>
+    </Card>
   );
 }
 
@@ -256,7 +350,10 @@ function TagList({ items }) {
   return (
     <div className="flex flex-wrap gap-2">
       {items.map((item) => (
-        <span key={item} className="rounded-full border border-cyan-100 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-800">
+        <span
+          key={item}
+          className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-800"
+        >
           {item}
         </span>
       ))}
@@ -264,220 +361,97 @@ function TagList({ items }) {
   );
 }
 
-function ProjectCard({ project, onOpen }) {
+function ProjectCard({ project, onImageClick }) {
   return (
-    <Card className="group flex h-full flex-col overflow-hidden p-0">
-      <div className="relative h-48 overflow-hidden bg-slate-100">
-        <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-        <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-slate-800 shadow">{project.completed}</div>
-      </div>
-      <div className="flex flex-1 flex-col p-6">
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">{project.supervisor}</p>
-        <h3 className="text-2xl font-black text-slate-950">{project.title}</h3>
-        <p className="mt-2 text-sm font-semibold text-slate-700">{project.tagline}</p>
-        <p className="mt-4 flex-1 text-sm leading-7 text-slate-600">{project.summary}</p>
-        <div className="mt-5"><TagList items={project.tags.slice(0, 5)} /></div>
-        <button onClick={() => onOpen(project.id)} className="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-cyan-700">
-          View Case Study <Icon name="arrow" size={16} />
-        </button>
-      </div>
-    </Card>
-  );
-}
-
-function ProjectCaseStudy({ project, type, process, screenshots, onBack, onImageClick }) {
-  const isAmaan = type === "amaan";
-
-  if (!project) {
-    return (
-      <section className="py-10">
-        <Card>
-          <h1 className="text-2xl font-black text-slate-950">Project Not Found</h1>
-          <button onClick={onBack} className="mt-4 rounded-2xl bg-slate-950 px-4 py-2 text-sm font-bold text-white">Back To Portfolio</button>
-        </Card>
-      </section>
-    );
-  }
-
-  const planningFocus = isAmaan
-    ? ["User Journey And Admin Journey", "Secure Login And Protected Sessions", "Policy Data Structure", "API Communication", "AI Assistant Use Cases"]
-    : ["Virtual Lab Layout", "Network Interface Setup", "Attack Simulation Plan", "Custom Rule Design", "Dashboard And Reporting Metrics"];
-
-  const codeSnippet = isAmaan
-    ? `Future<void> secureApiCall() async {
-  final token = await authService.getToken();
-  final response = await http.get(
-    Uri.parse(apiUrl),
-    headers: {"Authorization": "Bearer $token"},
-  );
-}`
-    : `alert tcp any any -> any any (flags:S; msg:"CUSTOM: Nmap SYN Scan Detected"; threshold:type both, track by_src, count 100, seconds 30; sid:2000001; rev:1;)
-alert tcp any any -> any any (msg:"CUSTOM: SSH BruteForce Attempt Detected"; flags:S; threshold:type both, track by_src, count 100, seconds 10; sid:2000002; rev:1;)`;
-
-  return (
-    <section className="py-10">
-      <button onClick={onBack} className="mb-6 inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm hover:border-cyan-200 hover:text-cyan-800">
-        ← Back To Portfolio
-      </button>
-
-      <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-800">
-            <Icon name="calendar" size={15} /> {project.completed}
-          </p>
-          <h1 className="text-4xl font-black tracking-tight text-[#001f54] md:text-6xl">{project.title}</h1>
-          <p className="mt-4 text-xl font-semibold leading-8 text-slate-700">{project.tagline}</p>
-          <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
-            <span className="rounded-full border border-slate-200 bg-white px-4 py-2 font-semibold">{project.timeline}</span>
-            <span className="rounded-full border border-slate-200 bg-white px-4 py-2 font-semibold">{project.supervisor}</span>
+    <Card className="overflow-hidden p-0">
+      <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="border-b border-slate-200 bg-slate-50 lg:border-b-0 lg:border-r">
+          <div className="p-5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white">
+                {project.completion}
+              </span>
+              <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
+                {project.timeline}
+              </span>
+            </div>
+            <h3 className="mt-4 text-2xl font-black tracking-tight text-slate-950 md:text-3xl">
+              {project.title}
+            </h3>
+            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
+              {project.supervisor}
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-700">
+              {project.summary}
+            </p>
+            <div className="mt-5">
+              <TagList items={project.stack} />
+            </div>
           </div>
-          <div className="mt-5"><TagList items={project.tags} /></div>
+
+          <button
+            type="button"
+            onClick={() => onImageClick({ src: project.image, label: project.title })}
+            className="block w-full overflow-hidden border-t border-slate-200 text-left"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-72 w-full object-cover transition duration-500 hover:scale-[1.02]"
+            />
+          </button>
         </div>
-        <HeroImage src={project.image} alt={project.title} />
-      </div>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-3">
-        <Card>
-          <h2 className="text-xl font-black text-slate-950">1. Project Overview</h2>
-          <p className="mt-3 text-sm font-bold text-cyan-800">The Brief</p>
-          <p className="mt-2 text-sm leading-7 text-slate-600">
-            {isAmaan ? "Create a secure travel insurance application that simplifies policy discovery, application handling, and admin management while keeping security and usability at the center." : "Build a real-time network threat detection and analytics project that can capture traffic, detect suspicious behavior, visualize alerts, and support incident reporting."}
-          </p>
-          <p className="mt-4 text-sm font-bold text-cyan-800">My Role</p>
-          <p className="mt-2 text-sm leading-7 text-slate-600">
-            {isAmaan ? "I contributed across the senior-year project lifecycle: frontend development, backend support, API integration, dashboard functionality, secure authentication, RBAC, testing, documentation, and presentation preparation." : "I engineered the lab workflow from environment setup to detection rules, attack simulation, Kibana dashboarding, packet and alert analysis, and automated PDF reporting."}
-          </p>
-        </Card>
-
-        <Card>
-          <h2 className="text-xl font-black text-slate-950">Problem & Solution</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
-            {isAmaan ? "Travel insurance users often face scattered information, unclear policy options, and slow application workflows. Amaan solves this through a guided mobile experience, secure user access, organized policy management, and smart AI-powered support." : "Raw security logs are hard to read without structure. Securi-Cata turns packet activity into meaningful security alerts, dashboard insights, and incident reports that are easier to investigate and explain."}
-          </p>
-        </Card>
-
-        <Card>
-          <h2 className="text-xl font-black text-slate-950">Final Deliverable</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
-            {isAmaan ? "A working secure mobile application prototype with user flows, admin policy management, AI-assisted features, protected API communication, and polished demo-ready screens." : "A working IDS monitoring pipeline using Suricata, Elastic, Kibana, Filebeat, custom detection rules, attack simulations, alert dashboards, and generated incident reports."}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <a href="#contact" className="rounded-2xl bg-slate-950 px-4 py-2 text-xs font-bold text-white">Contact For Demo</a>
-            <a href={PROFILE.github} className="rounded-2xl border border-slate-200 px-4 py-2 text-xs font-bold text-slate-700">GitHub Placeholder</a>
-          </div>
-        </Card>
-      </div>
-
-      <div className="mt-8 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <Card>
-          <h2 className="text-2xl font-black text-slate-950">2. Research & Planning</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-600">
-            {isAmaan ? "The project started with understanding the travel insurance journey: what users need before travelling, how policies are reviewed, and how admins manage policy information. I broke the system into user-facing and admin-facing flows, then planned the secure touchpoints before implementation." : "The project started with a clear question: how can I make network threats visible in a small lab environment? I planned the IDS architecture, selected Suricata for detection, Elastic and Kibana for analysis, and Kali Linux for controlled attack simulation."}
-          </p>
-          <div className="mt-5 rounded-2xl bg-slate-50 p-4 text-sm leading-7 text-slate-700">
-            <p className="font-black text-slate-950">Early Planning Focus:</p>
-            <ul className="mt-2 space-y-2">
-              {planningFocus.map((item) => (
-                <li key={item} className="flex gap-2"><Icon name="check" size={16} className="mt-1 text-cyan-700" />{item}</li>
+        <div className="p-5 md:p-6">
+          <div>
+            <h4 className="text-lg font-black text-slate-950">What employers should notice</h4>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              {project.impact.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1 text-sky-700">
+                    <Icon name="check" size={16} />
+                  </span>
+                  <span>{item}</span>
+                </li>
               ))}
             </ul>
           </div>
-        </Card>
 
-        <Card>
-          <h2 className="text-2xl font-black text-slate-950">3. The Process</h2>
-          <div className="mt-5 space-y-4">
-            {process.map((item) => (
-              <div key={item.step} className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-cyan-600 font-black text-white">{item.step}</div>
-                <div>
-                  <h3 className="font-black text-slate-950">{item.title}</h3>
-                  <p className="mt-1 text-sm leading-7 text-slate-600">{item.text}</p>
-                </div>
-              </div>
-            ))}
+          <div className="mt-6">
+            <h4 className="text-lg font-black text-slate-950">My role</h4>
+            <p className="mt-3 text-sm leading-7 text-slate-700">{project.role}</p>
           </div>
-        </Card>
-      </div>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-3">
-        <Card>
-          <h2 className="text-xl font-black text-slate-950">
-            {isAmaan ? "Development Snippet" : "Detection Logic & Architecture"}
-          </h2>
+          <div className="mt-6">
+            <h4 className="text-lg font-black text-slate-950">Clear takeaway</h4>
+            <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
+              {project.details.map((item) => (
+                <li key={item} className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {isAmaan ? (
-            <pre className="mt-4 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-xs leading-6 text-cyan-100"><code>{codeSnippet}</code></pre>
-          ) : (
-            <button
-              type="button"
-              onClick={() =>
-                onImageClick({
-                  src: "/Logos/securicata/elastic-alert-details.png",
-                  label: "Securi-Cata Detection Logic & Architecture",
-                })
-              }
-              className="mt-4 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 text-left shadow-lg transition hover:scale-[1.02] hover:shadow-2xl"
-            >
-              <div className="flex min-h-[220px] items-center justify-center bg-slate-50">
-                <img
-                  src="/Logos/securicata/elastic-alert-details.png"
-                  alt="Securi-Cata Detection Logic & Architecture"
-                  className="max-h-[320px] w-full object-contain"
-                />
-              </div>
-              <p className="p-3 text-center text-sm font-semibold text-slate-600">Click To Expand Detection Preview</p>
-            </button>
-          )}
-        </Card>
-
-        <Card>
-          <h2 className="text-xl font-black text-slate-950">Challenge Faced</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
-            {isAmaan ? "The hardest part was balancing a smooth user experience with secure backend behavior. I had to think carefully about authentication, admin access, API protection, and validation without making the app feel complicated for normal users." : "The biggest challenge was making the IDS alerts meaningful instead of noisy. I had to test traffic repeatedly, adjust rule thresholds, validate the alerts, and organize the dashboard so the evidence was understandable."}
-          </p>
-        </Card>
-
-        <Card>
-          <h2 className="text-xl font-black text-slate-950">Reflection</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
-            {isAmaan ? "Amaan taught me how much secure development depends on planning, not just coding. If I continue improving it, I would expand testing, strengthen monitoring, and make the AI and admin analytics more advanced." : "Securi-Cata made cybersecurity feel practical and real. I learned how detection rules, packet traffic, logs, dashboards, and reporting all connect. Next, I would add more attack scenarios and stronger alert prioritization."}
-          </p>
-        </Card>
-      </div>
-
-      <div className="mt-8">
-        <h2 className="mb-6 text-center text-2xl font-black text-slate-950">4. Final Screens & Results</h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {screenshots.map((shot) => (
-            <button
-              key={shot.label}
-              type="button"
-              onClick={() => onImageClick(shot)}
-              className="overflow-hidden rounded-3xl border border-slate-200 bg-white text-left shadow-lg shadow-slate-200/70 transition hover:scale-[1.02] hover:shadow-2xl"
-            >
-              <div className="flex min-h-[260px] items-center justify-center bg-slate-50">
-                <img src={shot.src} alt={shot.label} className="max-h-[500px] w-full object-contain" />
-              </div>
-              <p className="p-4 text-center text-lg font-semibold text-slate-600">{shot.label}</p>
-            </button>
-          ))}
+          <div className="mt-6">
+            <h4 className="text-lg font-black text-slate-950">Screenshots</h4>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {project.screenshots.map((shot) => (
+                <button
+                  key={shot.label}
+                  type="button"
+                  onClick={() => onImageClick(shot)}
+                  className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 text-left transition hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  <img src={shot.src} alt={shot.label} className="h-40 w-full object-cover" />
+                  <p className="border-t border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600">
+                    {shot.label}
+                  </p>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function ExperienceLogoCard({ item }) {
-  return (
-    <Card className="flex items-center gap-4">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-        <img src={item.logo} alt={`${item.name} Logo`} className="h-full w-full object-contain p-2" />
-      </div>
-      <div>
-        <h3 className="font-black text-slate-950">{item.name}</h3>
-        <p className="text-sm font-semibold text-slate-700">{item.role}</p>
-        <p className="text-xs text-slate-500">{item.dates}</p>
       </div>
     </Card>
   );
@@ -485,27 +459,27 @@ function ExperienceLogoCard({ item }) {
 
 function CertificationsSection() {
   return (
-    <section id="certifications" className="py-14">
-      <SectionTitle
-        icon="file"
+    <section id="certifications" className="py-16">
+      <SectionHeading
+        icon="briefcase"
+        eyebrow="Proof of growth"
         title="Certifications"
         subtitle="A focused collection of certifications and professional learning programs that support my cybersecurity, analytics, and digital skills."
       />
-
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {certifications.map((cert) => (
-          <Card key={cert.title} className="flex h-full flex-col items-center text-center transition hover:-translate-y-1 hover:shadow-2xl">
-            <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-50">
-              <img src={cert.logo} alt={`${cert.issuer} Logo`} className="h-full w-full object-contain p-3" />
+          <Card key={cert.title} className="flex h-full flex-col text-center">
+            <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-50">
+              <img src={cert.logo} alt={`${cert.issuer} logo`} className="h-full w-full object-contain p-3" />
             </div>
             <h3 className="mt-5 text-lg font-black text-slate-950">{cert.title}</h3>
-            <p className="mt-2 text-sm font-semibold text-cyan-800">{cert.issuer}</p>
+            <p className="mt-2 text-sm font-semibold text-sky-700">{cert.issuer}</p>
             <p className="mt-1 text-xs text-slate-500">{cert.date}</p>
             <a
               href={cert.file}
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-2 text-xs font-bold text-slate-700 transition hover:border-cyan-200 hover:text-cyan-800"
+              className="mt-5 inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 transition hover:border-sky-200 hover:text-sky-800"
             >
               View Certificate <Icon name="external" size={14} />
             </a>
@@ -516,187 +490,308 @@ function CertificationsSection() {
   );
 }
 
-function Home({ onOpenProject }) {
-  const contactQR = "/Logos/Mariam-Linkedin-QR.png";
-  const cvQR = "/Logos/Mariam-CV-QR.png";
+function Home({ onImageClick }) {
+  const contactLinks = [
+    {
+      label: "Email me",
+      href: `mailto:${PROFILE.email}`,
+      icon: "mail",
+      style: "bg-slate-950 text-white hover:bg-sky-700",
+    },
+    {
+      label: "LinkedIn",
+      href: PROFILE.linkedin,
+      icon: "linkedin",
+      style: "border border-slate-200 bg-white text-slate-800 hover:border-sky-200 hover:text-sky-800",
+    },
+    {
+      label: "Download CV",
+      href: PROFILE.cvUrl,
+      icon: "download",
+      style: "border border-slate-200 bg-white text-slate-800 hover:border-sky-200 hover:text-sky-800",
+      download: true,
+    },
+  ];
 
   return (
     <>
-      <section className="grid items-center gap-8 py-10 md:grid-cols-[1.1fr_0.9fr] md:py-16">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-800">
+      <section className="grid items-center gap-8 py-8 md:grid-cols-[1.1fr_0.9fr] md:py-14">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-bold text-sky-800">
             <Icon name="shield" size={16} /> Cybersecurity Portfolio
           </p>
-<h1 className="text-3xl md:text-6xl font-black tracking-tight text-slate-950"> Building Secure Ideas Into Real Products.
-</h1>
+          <h1 className="max-w-3xl text-4xl font-black tracking-tight text-slate-950 md:text-6xl">
+            Easy to scan, easy to trust, and built for employers.
+          </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            Hey there! I’m Mariam, a cybersecurity working student who enjoys learning fast, building with purpose, and turning complex technical ideas into simple, useful systems. My work moves between secure mobile apps, IDS monitoring, data analytics, dashboards, customer-facing operations, and real-world teamwork.
+            I am Mariam, a cybersecurity graduate and working student who likes to turn complex ideas into clear, useful systems. This portfolio is designed to be readable on mobile, simple to scroll, and focused on the work that matters most.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-            In December 2025, I completed Securi-Cata, an in-house threat detection lab supervised by Mr. Ali AlAali. In May 2026, I completed Amaan, my senior-year secure travel insurance application supervised by Dr. Talha Khan. Both projects started from research and planning, went through technical build and testing, and ended as polished products I can confidently present.
+            The CV linked here is the updated version you shared. I also removed the old e-card QR section so the portfolio now points directly to the information employers need.
           </p>
+
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#projects" className="rounded-2xl bg-slate-950 px-5 py-3 font-bold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-cyan-700">Explore Projects</a>
-            <a href={PROFILE.cvUrl} download className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-cyan-200 hover:text-cyan-800"><Icon name="/Logos/Mariam-Abdan-CV.pdf" size={18} /> Download CV</a>
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 font-bold text-white shadow-lg shadow-slate-200 transition hover:-translate-y-0.5 hover:bg-sky-700"
+            >
+              See Projects <Icon name="arrow" size={18} />
+            </a>
+            <a
+              href={PROFILE.cvUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-800"
+            >
+              Open CV <Icon name="download" size={18} />
+            </a>
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }}>
-          <Card className="relative overflow-hidden bg-gradient-to-br from-white to-cyan-50">
-            <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-cyan-200/70 blur-3xl" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.65, delay: 0.1 }}
+        >
+          <Card className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)]">
+            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-sky-200/40 blur-3xl" />
             <div className="relative">
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-slate-950 text-white">
-                <Icon name="shield" size={42} />
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-slate-950 text-white">
+                <Icon name="shield" size={34} />
               </div>
               <h2 className="text-2xl font-black text-slate-950">{PROFILE.title}</h2>
-              <p className="mt-3 text-slate-600">Passionate, curious, practical, and open to learning across security, software, analytics, and professional teamwork.</p>
-              <div className="mt-6 grid gap-3 text-sm">
-                {["Cybersecurity Student Since 2022", "Expected Graduation: June 2026", "Working Student With Real Workplace Experience", "Focused On Secure And Usable Systems"].map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm">
-                    <Icon name="check" className="text-cyan-700" size={18} /> {item}
+              <p className="mt-3 text-slate-600">
+                Clear communication, secure thinking, and polished delivery.
+              </p>
+
+              <div className="mt-6 grid gap-3">
+                {featuredHighlights.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                  >
+                    <Icon name="check" size={18} className="mt-1 text-sky-700" />
+                    <p className="text-sm leading-6 text-slate-700">{item}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl bg-slate-950 p-4 text-center text-white">
+                  <p className="text-2xl font-black">2026</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/70">Graduate year</p>
+                </div>
+                <div className="rounded-2xl bg-sky-100 p-4 text-center text-slate-900">
+                  <p className="text-2xl font-black">2</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-600">Featured projects</p>
+                </div>
+                <div className="rounded-2xl bg-slate-100 p-4 text-center text-slate-900">
+                  <p className="text-2xl font-black">5+</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-600">Experiences</p>
+                </div>
               </div>
             </div>
           </Card>
         </motion.div>
       </section>
 
-      <section id="about" className="py-14">
-        <SectionTitle icon="briefcase" title="A Little About Me" subtitle="A balanced snapshot of my journey as a cybersecurity student, working student, and creative problem solver." />
+      <section id="about" className="py-16">
+        <SectionHeading
+          icon="briefcase"
+          eyebrow="Quick overview"
+          title="A little about me"
+          subtitle="Short, clear context for employers who want to understand the person behind the projects."
+        />
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Card className="flex h-full flex-col justify-between bg-white">
-            <div>
-              <h3 className="text-3xl font-black text-slate-950">Working Student</h3>
-              <div className="mt-5 space-y-4 text-[15px] leading-8 text-slate-600">
-                <p>
-                  I am completing my <strong className="text-slate-950">Bachelor Of ICT In Cybersecurity</strong> at Bahrain Polytechnic, expected to graduate in <strong className="text-slate-950">June 2026</strong>.
-                </p>
-                <p>
-                  Alongside my studies, I have worked across development, retail operations, administration, client support, IT exposure, and event leadership.
-                </p>
-                <p>
-                  That mix shaped the way I work: technical, organized, people-aware, adaptable, and always ready to learn something new.
-                </p>
-                <p>
-                  My journey includes hands-on secure app development at Raincode, cybersecurity project work, data analytics training with General Assembly, professional development with PwC Middle East, Microsoft Power Platform exposure, and workplace experience with companies including Lush, Xerox, and The Collective Hub.
-                </p>
-              </div>
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <Card>
+            <h3 className="text-2xl font-black text-slate-950">What I bring</h3>
+            <div className="mt-5 space-y-4 text-sm leading-8 text-slate-700">
+              <p>
+                I am completing my Bachelor of ICT in Cybersecurity at Bahrain Polytechnic and I like work that combines security, structure, and usability.
+              </p>
+              <p>
+                Alongside study, I have worked in development, retail operations, administration, client support, IT exposure, and event leadership. That mix helps me communicate well and stay organized in fast-moving environments.
+              </p>
+              <p>
+                My goal with this portfolio is simple: make the important information easy to find, easy to read, and easy to remember.
+              </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl bg-cyan-50 p-4 text-center ring-1 ring-cyan-100">
-                <p className="text-3xl font-black text-cyan-700">2022</p>
-                <p className="mt-2 text-xs font-bold text-slate-600">Started Cybersecurity Journey</p>
-              </div>
-              <div className="rounded-2xl bg-cyan-50 p-4 text-center ring-1 ring-cyan-100">
-                <p className="text-3xl font-black text-cyan-700">2026</p>
-                <p className="mt-2 text-xs font-bold text-slate-600">Expected Graduation</p>
-              </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {aboutPoints.map((item) => (
+                <div key={item} className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <Icon name="check" size={18} className="mt-1 shrink-0 text-sky-700" />
+                  <p className="text-sm leading-6 text-slate-700">{item}</p>
+                </div>
+              ))}
             </div>
           </Card>
 
-          <div className="grid gap-6">
-            <Card className="bg-gradient-to-br from-cyan-50 to-white text-center">
-              <h3 className="text-3xl font-black text-slate-950">Fun Facts About Me</h3>
-              <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                <div className="flex flex-col items-center justify-center rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
-                  <Icon name="shield" size={30} className="text-cyan-700" />
-                  <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
-                    I love detecting threats, understanding attack behavior, and staying proactive rather than reactive in cybersecurity.
-                  </p>
+          <Card className="bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_100%)]">
+            <h3 className="text-2xl font-black text-slate-950">At a glance</h3>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {quickStats.map((stat) => (
+                <StatCard key={stat.label} value={stat.value} label={stat.label} />
+              ))}
+            </div>
+            <div className="mt-6 grid gap-4">
+              {[
+                "Cybersecurity student since 2022",
+                "Expected graduation: June 2026",
+                "Focus on secure and usable systems",
+                "Comfortable working across technical and non-technical tasks",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+                  <span className="rounded-full bg-sky-100 p-2 text-sky-800">
+                    <Icon name="check" size={16} />
+                  </span>
+                  <p className="text-sm font-semibold text-slate-700">{item}</p>
                 </div>
-                <div className="flex flex-col items-center justify-center rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
-                  <Icon name="palette" size={30} className="text-cyan-700" />
-                  <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
-                    Outside of technology, I enjoy creating art. It keeps me creative, focused, and balanced.
-                  </p>
-                </div>
-              </div>
-            </Card>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </section>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {aboutHighlights.slice(0, 4).map((item) => (
-                <div key={item} className="flex min-h-[132px] items-center gap-3 rounded-3xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-200/50">
-                  <Icon name="check" size={18} className="shrink-0 text-cyan-700" />
-                  <p className="text-sm leading-6 text-slate-600">{item}</p>
-                </div>
+      <section className="py-16">
+        <SectionHeading
+          icon="briefcase"
+          eyebrow="Experience"
+          title="Education and work experience"
+          subtitle="A compact history that gives employers context without making them dig."
+        />
+
+        <div className="space-y-10">
+          <div>
+            <h3 className="mb-5 text-2xl font-black text-slate-950">Education</h3>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {educationItems.map((item) => (
+                <TimelineItem key={item.name} item={item} />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-5 text-2xl font-black text-slate-950">Work experience</h3>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {workExperienceItems.map((item) => (
+                <TimelineItem key={item.name} item={item} />
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-14">
-        <SectionTitle icon="briefcase" title="Education And Work Experience" subtitle="A structured snapshot of my academic, professional, and practical learning journey." />
-
-        <div className="space-y-10">
-          <div>
-            <h3 className="mb-5 text-2xl font-black text-slate-950">Education</h3>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {educationItems.map((item) => <ExperienceLogoCard key={item.name} item={item} />)}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="mb-5 text-2xl font-black text-slate-950">Work Experience</h3>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {workExperienceItems.map((item) => <ExperienceLogoCard key={item.name} item={item} />)}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CertificationsSection />
-
-      <section id="skills" className="py-14">
-        <SectionTitle icon="code" title="Skills" subtitle="A practical blend of cybersecurity, secure development, analytics, dashboards, and implementation tools." />
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+      <section id="skills" className="py-16">
+        <SectionHeading
+          icon="code"
+          eyebrow="Capabilities"
+          title="Skills"
+          subtitle="A practical mix of cybersecurity, secure development, analytics, and visual tooling."
+        />
+        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {skills.map((skill) => (
-            <div key={skill} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-bold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:text-cyan-800">
+            <div
+              key={skill}
+              className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-200 hover:text-sky-800"
+            >
               {skill}
             </div>
           ))}
         </div>
       </section>
 
-      <section id="projects" className="py-14">
-        <SectionTitle icon="database" title="Featured Projects" subtitle="Two major projects, each built from the first idea into a final product with planning, development, testing, and presentation-ready outcomes." />
-        <div className="grid gap-6 lg:grid-cols-2">
-          {projectCards.map((project) => <ProjectCard key={project.id} project={project} onOpen={onOpenProject} />)}
+      <section id="projects" className="py-16">
+        <SectionHeading
+          icon="database"
+          eyebrow="Portfolio focus"
+          title="Featured projects"
+          subtitle="Each project is presented in a single readable block so employers can understand the problem, the role, the stack, and the outcome quickly."
+        />
+        <div className="space-y-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} onImageClick={onImageClick} />
+          ))}
         </div>
       </section>
 
-      <section id="contact" className="py-14">
-        <SectionTitle icon="mail" title="Contact & QR Codes" subtitle="Scan to save my contact details or open my CV quickly." />
-        <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+      <CertificationsSection />
+
+      <section id="contact" className="py-16">
+        <SectionHeading
+          icon="mail"
+          eyebrow="Contact"
+          title="Let’s connect"
+          subtitle="Direct links only, no QR scan needed."
+        />
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <Card>
-            <h3 className="text-xl font-black text-slate-950">Let’s Connect</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-600">I’m open to learning opportunities, cybersecurity roles, secure development projects, internships, and spaces where I can keep growing technically and professionally.</p>
-            <div className="mt-5 space-y-3 text-slate-700">
-              <p><strong className="text-slate-950">Email:</strong> {PROFILE.email}</p>
-              <p><strong className="text-slate-950">Phone:</strong> {PROFILE.phone}</p>
-              <p><strong className="text-slate-950">Location:</strong> {PROFILE.location}</p>
+            <h3 className="text-2xl font-black text-slate-950">Contact details</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">
+              I’m open to cybersecurity roles, secure development work, internships, and opportunities where I can keep learning and contributing.
+            </p>
+
+            <div className="mt-6 space-y-3 text-sm text-slate-700">
+              <p className="flex items-center gap-3">
+                <span className="rounded-full bg-sky-100 p-2 text-sky-800">
+                  <Icon name="mail" size={16} />
+                </span>
+                <a className="font-semibold text-slate-800 hover:text-sky-800" href={`mailto:${PROFILE.email}`}>
+                  {PROFILE.email}
+                </a>
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="rounded-full bg-sky-100 p-2 text-sky-800">
+                  <Icon name="location" size={16} />
+                </span>
+                <span className="font-semibold text-slate-800">{PROFILE.location}</span>
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="rounded-full bg-sky-100 p-2 text-sky-800">
+                  <Icon name="calendar" size={16} />
+                </span>
+                <span className="font-semibold text-slate-800">CV updated from your uploaded PDF</span>
+              </p>
             </div>
+
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={`mailto:${PROFILE.email}`} className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-4 py-3 font-bold text-white"><Icon name="mariamabdan13@gmail.com" size={18} /> Email Me</a>
-              <a href={PROFILE.linkedin} target="_blank" rel="linkedin.com/in/mariamabdan" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-800 hover:border-cyan-200"><Icon name="linkedin" size={18} /> LinkedIn</a>
-              <a href={PROFILE.github} target="_blank" rel="https://github.com/mariamems" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 px-4 py-3 font-bold text-slate-800 hover:border-cyan-200"><Icon name="github" size={18} /> GitHub</a>
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.download ? undefined : "_blank"}
+                  rel="noreferrer"
+                  download={link.download ? true : undefined}
+                  className={`inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-bold transition hover:-translate-y-0.5 ${link.style}`}
+                >
+                  <Icon name={link.icon} size={16} />
+                  {link.label}
+                </a>
+              ))}
             </div>
           </Card>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <Card className="text-center">
-              <h3 className="mb-4 font-black text-slate-950">Contact QR</h3>
-              <img src={"/Logos/eCardQR.png"} alt="QR Code For Contact Info" className="mx-auto rounded-2xl bg-white p-3 shadow" />
-              <p className="mt-4 text-xs leading-5 text-slate-500">Scans as a vCard contact.</p>
-            </Card>
-            <Card className="text-center">
-              <h3 className="mb-4 font-black text-slate-950">CV QR</h3>
-              <img src={"Logos/Mariam-CV-QR.png"} alt="QR Code For CV" className="mx-auto rounded-2xl bg-white p-3 shadow" />
-              <a href={"/Logos/Mariam-Abdan-CV.pdf"} target="_blank" rel="/Logos/Mariam-CV-QR.png" className="mt-4 inline-flex items-center justify-center gap-2 text-sm font-bold text-cyan-800 hover:text-cyan-600">Open CV <Icon name="public/Logos/Mariam-Abdan-CV.pdf" size={14} /></a>
-            </Card>
-          </div>
+
+          <Card className="bg-[linear-gradient(180deg,#f8fbff_0%,#ffffff_100%)]">
+            <h3 className="text-2xl font-black text-slate-950">Want to add video later?</h3>
+            <ol className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              <li>1. Put the video file in `public/videos/` so Vite can serve it directly.</li>
+              <li>2. Use a video element with controls, a poster image, and a clear title inside the project section.</li>
+              <li>3. Add `poster` for a strong thumbnail, and keep the file compressed for mobile.</li>
+              <li>4. If the video is large, link to YouTube or Vimeo instead of autoplaying it.</li>
+            </ol>
+
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-700">
+              <p className="font-black text-slate-950">Free deployment</p>
+              <p className="mt-2">
+                The easiest free option is Netlify. Build the site with <code>npm run build</code>, then deploy the `dist` folder or connect the repo directly.
+              </p>
+            </div>
+          </Card>
         </div>
       </section>
     </>
@@ -704,80 +799,70 @@ function Home({ onOpenProject }) {
 }
 
 export default function CybersecurityPortfolio() {
-  const [activeProject, setActiveProject] = useState("home");
   const [selectedImage, setSelectedImage] = useState(null);
-  const selectedProject = projectCards.find((project) => project.id === activeProject);
-
-  function openProject(id) {
-    setActiveProject(id);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function goHome() {
-    setActiveProject("home");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.10),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.08),transparent_30%)]" />
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <nav className="mb-10 flex items-center justify-between rounded-3xl border border-slate-200 bg-white/90 px-5 py-4 shadow-lg shadow-slate-200/60 backdrop-blur">
-          <button onClick={goHome} className="flex items-center gap-3 font-black text-slate-950">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white">
-              <Icon name="shield" size={22} />
+    <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.06),transparent_30%),linear-gradient(180deg,#f8fbff_0%,#eef6fb_100%)] text-slate-900">
+      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[linear-gradient(180deg,rgba(255,255,255,0.75),rgba(255,255,255,0))]" />
+      <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-4 md:px-8 md:pt-6">
+        <nav className="sticky top-3 z-40 mb-8 rounded-[28px] border border-white/70 bg-white/85 px-4 py-3 shadow-[0_15px_50px_rgba(15,23,42,0.1)] backdrop-blur md:px-5">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <a href="#top" className="flex items-center gap-3 font-black text-slate-950">
+              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                <Icon name="shield" size={22} />
+              </span>
+              <span>{PROFILE.name}</span>
+            </a>
+            <div className="flex flex-wrap gap-2 text-sm font-semibold text-slate-600">
+              {["about", "skills", "projects", "certifications", "contact"].map((section) => (
+                <a
+                  key={section}
+                  href={`#${section}`}
+                  className="rounded-full px-3 py-2 transition hover:bg-sky-50 hover:text-sky-800"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </a>
+              ))}
             </div>
-            <span>{PROFILE.name}</span>
-          </button>
-          <div className="hidden gap-6 text-sm font-bold text-slate-600 md:flex">
-            <button onClick={goHome} className="hover:text-cyan-800">Home</button>
-            <a href="#about" onClick={() => setActiveProject("home")} className="hover:text-cyan-800">About</a>
-            <a href="#skills" onClick={() => setActiveProject("home")} className="hover:text-cyan-800">Skills</a>
-            <a href="#projects" onClick={() => setActiveProject("home")} className="hover:text-cyan-800">Projects</a>
-            <a href="#certifications" onClick={() => setActiveProject("home")} className="hover:text-cyan-800">Certifications</a>
-            <a href="#contact" onClick={() => setActiveProject("home")} className="hover:text-cyan-800">Contact</a>
           </div>
         </nav>
 
-        {activeProject === "home" ? (
-          <Home onOpenProject={openProject} />
-        ) : (
-          <ProjectCaseStudy
-            project={selectedProject}
-            type={activeProject}
-            process={activeProject === "amaan" ? amaanProcess : securiCataProcess}
-            screenshots={activeProject === "amaan" ? amaanScreenshots : securiCataScreenshots}
-            onBack={goHome}
-            onImageClick={setSelectedImage}
-          />
-        )}
+        <div id="top">
+          <Home onImageClick={setSelectedImage} />
+        </div>
 
-        {selectedImage && (
+        {selectedImage ? (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative w-full max-w-6xl" onClick={(event) => event.stopPropagation()}>
+            <div
+              className="w-full max-w-5xl"
+              onClick={(event) => event.stopPropagation()}
+            >
               <button
                 type="button"
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-5xl font-bold text-white"
-                aria-label="Close image preview"
+                className="mb-4 ml-auto block rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-800"
               >
-                ×
+                Close
               </button>
               <img
                 src={selectedImage.src}
                 alt={selectedImage.label}
-                className="max-h-[90vh] w-full rounded-2xl bg-white object-contain"
+                className="max-h-[82vh] w-full rounded-[24px] bg-white object-contain p-2"
               />
-              <p className="mt-4 text-center text-xl font-semibold text-white">{selectedImage.label}</p>
+              <p className="mt-3 text-center text-sm font-semibold text-white">
+                {selectedImage.label}
+              </p>
             </div>
           </div>
-        )}
+        ) : null}
 
-        <footer className="mt-10 border-t border-slate-200 py-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} {PROFILE.name}. Cybersecurity portfolio built to present projects clearly, confidently, and professionally.
+        <footer className="border-t border-slate-200 pt-8 text-center text-sm text-slate-600">
+          <p>
+            {new Date().getFullYear()} {PROFILE.name}. Built to be easy to read, easy to scroll, and easy to trust.
+          </p>
         </footer>
       </div>
     </main>
